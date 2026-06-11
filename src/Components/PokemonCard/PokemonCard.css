@@ -1,0 +1,63 @@
+.CardPokemon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  width: 180px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  border: 1px solid #e5e4e7;
+}
+
+.CardPokemon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.CardPokemon img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.CardPokemon h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.CardPokemon button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    background-color 0.2s,
+    box-shadow 0.2s;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.CardPokemon button:active {
+  transform: scale(0.95);
+}
+
+.CardPokemon button:hover {
+  background-color: #8c2ad6;
+  box-shadow: 0 4px 10px rgba(170, 59, 255, 0.4);
+}
+
+.CardPokemon button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
