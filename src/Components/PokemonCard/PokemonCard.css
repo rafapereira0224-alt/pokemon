@@ -61,3 +61,292 @@
   cursor: not-allowed;
   opacity: 0.7;
 }
+
+.imagem-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.imagem-anim {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CardPokemon.evoluindo {
+  animation: pulso-card 0.7s ease-out;
+}
+
+@keyframes pulso-card {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.img-evoluindo {
+  animation: zoom-imagem 0.7s ease-out;
+}
+
+@keyframes zoom-imagem {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  35% {
+    transform: scale(1.3) rotate(-4deg);
+  }
+  60% {
+    transform: scale(0.9) rotate(3deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.flash-evolucao {
+  position: absolute;
+  inset: 0;
+  background: white;
+  border-radius: 8px;
+  pointer-events: none;
+  animation: flash-branco 0.7s ease-out;
+}
+
+@keyframes flash-branco {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.confete-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.confete {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 2px;
+  opacity: 0;
+  animation: estourar-confete 0.9s ease-out forwards;
+  animation-delay: var(--atraso);
+}
+
+@keyframes estourar-confete {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(720deg)
+      translate(
+        calc(cos(var(--angulo)) * var(--distancia)),
+        calc(sin(var(--angulo)) * var(--distancia) + 40px)
+      );
+  }
+}
+
+.barra-progresso-wrapper {
+  width: 100%;
+  height: 8px;
+  background: #e5e4e7;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.barra-progresso-preenchida {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.skeleton-imagem {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #e5e4e7 25%, #f2f1f4 37%, #e5e4e7 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fade-overlay 0.2s ease;
+}
+
+@keyframes fade-overlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-conteudo {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  border: 3px solid;
+  padding: 32px 24px 24px;
+  max-width: 420px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  text-align: center;
+  animation: subir-modal 0.25s ease;
+}
+
+@keyframes subir-modal {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-fechar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #f0f0f2;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.modal-fechar:hover {
+  background: #e0e0e3;
+}
+
+.modal-imagem {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}
+
+.modal-conteudo h2 {
+  margin: 8px 0 4px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.modal-badge-tipo {
+  display: inline-block;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.modal-estagio {
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.modal-titulo-cadeia {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  color: #333;
+  text-align: left;
+}
+
+.modal-cadeia-evolutiva {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.modal-cadeia-item-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-cadeia-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  border-radius: 12px;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+.modal-cadeia-item.cadeia-passada {
+  opacity: 0.8;
+}
+
+.modal-cadeia-item.cadeia-atual {
+  opacity: 1;
+  background: #f5f0ff;
+  border: 2px solid #aa3bff;
+}
+
+.modal-cadeia-item img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.modal-cadeia-item span {
+  font-size: 11px;
+  font-weight: 600;
+  color: #444;
+}
+
+.modal-cadeia-seta {
+  color: #999;
+  font-size: 18px;
+}
