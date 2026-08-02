@@ -92,7 +92,7 @@ import lunalaImagem from "../assets/Lunala.png";
 import gastlyImagem from "../assets/Gastly.png";
 import haunterImagem from "../assets/Haunter.png";
 import gengarImagem from "../assets/Gengar.png";
-import mimikyuImagem from "../assets/Mimikyu.png";
+import mimikyuImagem from "../assets/mimikyu.png";
 import litwickImagem from "../assets/Litwick.png";
 import lampentImagem from "../assets/Lampent.png";
 import chandelureImagem from "../assets/Chandelure.png";
